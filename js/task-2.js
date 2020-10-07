@@ -7,15 +7,31 @@ const ingredients = [
   'Приправы',
 ];
 
-const listEl = document.querySelector('ul');
-listEl.append(
-  ...ingredients.map(el => {
-    const liEl = document.createElement('li');
-    liEl.textContent = el;
-    return liEl;
-  }),
-);
-console.log(listEl);
+const ingredientsList = ingredients.map(ingredient => {
+  const listItemRef = document.createElement('li');
+  listItemRef.textContent = ingredient;
+  return listItemRef;
+});
+document.querySelector('#ingredients').append(...ingredientsList);
+
+// Еще вариант решения, недопиленный
+// const listEl = document.querySelector('#ingredients');
+// ingredients.forEach(ingredient => {
+//   let liEl = document.createElement('li');
+//   liEl.textContent = ingredient;
+//   console.log(liEl);
+// });
+// listEl.append(...ingredients);
+
+// И еще один, гитхаб не принимает егь из-за каких-то МИМов
+// listEl.append(
+//   ...ingredients.map(el => {
+//     const liEl = document.createElement('li');
+//     liEl.textContent = el;
+//     return liEl;
+//   }),
+// );
+// console.log(listEl);
 
 /*Напиши скрипт, который для каждого элемента 
 массива ingredients создаст отдельный li, 
