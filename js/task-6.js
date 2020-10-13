@@ -1,7 +1,7 @@
 const validationInput = document.querySelector('#validation-input');
 
 validationInput.addEventListener('focus', () => {
-  validationInput.classList = '';
+  validationInput.classList = null;
 });
 validationInput.addEventListener('blur', onValidationInput);
 
